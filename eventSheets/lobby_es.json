@@ -413,7 +413,7 @@
 									"children": [
 										{
 											"eventType": "comment",
-											"text": "If the CardsDocked variable is less than 5 (the amount of cards allowed in a hand), then set the button & it's visibility to disabled."
+											"text": "If the CardsDocked variable is less than 3 (the amount of cards allowed in a hand), then set the button & it's visibility to disabled."
 										}
 									]
 								}
@@ -897,6 +897,10 @@
 									"sid": 717593601693323,
 									"children": [
 										{
+											"eventType": "comment",
+											"text": "When you stop dragging the card, and the card is overlapping a card dock, AND that card dock is dockable, set the card's card position to the card dock's card slot"
+										},
+										{
 											"eventType": "block",
 											"conditions": [
 												{
@@ -933,6 +937,10 @@
 											"sid": 560125733381773,
 											"children": [
 												{
+													"eventType": "comment",
+													"text": "If the card's position is equal to the card dock's card slot, set the card's ACTUAL position to the card dock, and set the card's Docked variable to true"
+												},
+												{
 													"eventType": "block",
 													"conditions": [
 														{
@@ -959,6 +967,10 @@
 													],
 													"sid": 988923100008635,
 													"children": [
+														{
+															"eventType": "comment",
+															"text": "if the card slot is equal to the card's card position, set the card dock's dockable variable to false"
+														},
 														{
 															"eventType": "block",
 															"conditions": [],
@@ -1009,7 +1021,13 @@
 																	}
 																}
 															],
-															"sid": 872836228427732
+															"sid": 872836228427732,
+															"children": [
+																{
+																	"eventType": "comment",
+																	"text": "Add boosts to global variables, and add card pos to cards docked to track how many cards are docked"
+																}
+															]
 														}
 													]
 												}
