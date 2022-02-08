@@ -1,0 +1,80 @@
+{
+	"name": "Player",
+	"plugin-id": "Sprite",
+	"sid": 693937010428088,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"sid": 234038450879711
+		},
+		{
+			"name": "Speed",
+			"type": "number",
+			"desc": "",
+			"sid": 586299565289367
+		},
+		{
+			"name": "Attack",
+			"type": "number",
+			"desc": "",
+			"sid": 119957527164193
+		},
+		{
+			"name": "Resource",
+			"type": "number",
+			"desc": "",
+			"sid": 971078761688400
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 788437457347811
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5293982,
+						"collisionPoly": {
+							"points": [
+								0.05555555555555555,
+								0.05555555555555555,
+								0.9444444444444444,
+								0.05555555555555555,
+								0.9444444444444444,
+								0.9444444444444444,
+								0.05555555555555555,
+								0.9444444444444444
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 489006623614086,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

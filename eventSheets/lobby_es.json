@@ -1,0 +1,1031 @@
+{
+	"name": "Lobby_ES",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Controls_ES"
+		},
+		{
+			"eventType": "variable",
+			"name": "CardsDocked",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 941492867476821
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 577945716863549
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 479854787034048
+				}
+			],
+			"sid": 274730255384149
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Cards",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Card Spawning",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "This is the code to randomly spawn cards, and then automatically set their stats to what they need to be. This will be turned off in this prototype."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 509785660002992
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Cards",
+									"sid": 313757348815123,
+									"parameters": {
+										"animation": "str(round(random(0,4)))",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 485664342363111,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "On start of layout - set the animation to a random animation"
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Cards",
+									"sid": 996075866029255,
+									"parameters": {
+										"animation": "\"0\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Cards",
+									"sid": 494808731679569,
+									"parameters": {
+										"instance-variable": "AttackBoost",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 372492070390765,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If \"animation\" is playing, set variable to number"
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Cards",
+									"sid": 735576879419330,
+									"parameters": {
+										"animation": "\"1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Cards",
+									"sid": 854291742547424,
+									"parameters": {
+										"instance-variable": "SpeedBoost",
+										"value": "10"
+									}
+								}
+							],
+							"sid": 475280220386984,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If \"animation\" is playing, set variable to number"
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Cards",
+									"sid": 265528621292378,
+									"parameters": {
+										"animation": "\"2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Cards",
+									"sid": 869122362797399,
+									"parameters": {
+										"instance-variable": "HealthBoost",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 859140687174910,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If \"animation\" is playing, set variable to number"
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Cards",
+									"sid": 434239460408204,
+									"parameters": {
+										"animation": "\"3\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Cards",
+									"sid": 284810252916027,
+									"parameters": {
+										"instance-variable": "ResourceBoost",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 686136026831192,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If \"animation\" is playing, set variable to number"
+								}
+							]
+						}
+					],
+					"sid": 742915610612381
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Cards Showing",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "This is the code blocks on how the cards will show and unshow when the player is in the right spot"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player",
+									"sid": 653555387952372,
+									"parameters": {
+										"object": "NextSceneZone"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "CardDock",
+									"sid": 140295476229223,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "CardDock",
+									"sid": 977952010478505,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Cards",
+									"sid": 626322574735432,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Cards",
+									"sid": 688700313565798,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 871972071983484,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If the player is overlapping the next scene zone, set the card docks & the card's visibility & collisions to enabled"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 998078294788001,
+											"parameters": {
+												"variable": "CardsDocked",
+												"comparison": 5,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "Button",
+											"sid": 650383804055823,
+											"parameters": {
+												"mode": "enabled"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Button",
+											"sid": 164318667067521,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 338613572987505,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "If the CardsDocked variable is equal to or greater than 3 (the amount of cards allowed in a hand), then set the button & it's visibility to enabled."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-clicked",
+													"objectClass": "Button",
+													"sid": 603000697852440
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 451365723263782,
+													"parameters": {
+														"variable": "Attack",
+														"value": "Cards.AttackBoost"
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 393657991958226,
+													"parameters": {
+														"variable": "Health",
+														"value": "Cards.HealthBoost"
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 832602174814933,
+													"parameters": {
+														"variable": "Resource",
+														"value": "Cards.ResourceBoost"
+													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 450865863058981,
+													"parameters": {
+														"variable": "Speed",
+														"value": "Cards.SpeedBoost"
+													}
+												},
+												{
+													"id": "go-to-layout-by-name",
+													"objectClass": "System",
+													"sid": 152224307750557,
+													"parameters": {
+														"layout": "NextSceneZone.NextScene"
+													}
+												}
+											],
+											"sid": 585463266955536,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "if the button is clicked, add the stat boosts to the global variables, and go to the level"
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 587383703180829,
+											"parameters": {
+												"variable": "CardsDocked",
+												"comparison": 2,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "Button",
+											"sid": 433894568908397,
+											"parameters": {
+												"mode": "disabled"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Button",
+											"sid": 433723594506219,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 565060986831915,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "If the CardsDocked variable is less than 5 (the amount of cards allowed in a hand), then set the button & it's visibility to disabled."
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player",
+									"sid": 841420391096725,
+									"parameters": {
+										"object": "NextSceneZone"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "CardDock",
+									"sid": 286345782748241,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "CardDock",
+									"sid": 302207661704485,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Cards",
+									"sid": 146992143765959,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Cards",
+									"sid": 924630125269931,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Button",
+									"sid": 127362844258950,
+									"parameters": {
+										"mode": "disabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Button",
+									"sid": 927412480513267,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 522938149919325,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "if the player is not overlapping the next scene zone, make the cards & their docks invisible and turn off their collisions, and set the start button to invisible & disabled"
+								}
+							]
+						}
+					],
+					"sid": 661070102422198
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Card Docking",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "This is the code blocks where the cards will dock and un dock from the player's hands (the card docks)"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 263986139543339
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Cards",
+									"sid": 331814511913592,
+									"parameters": {
+										"instance-variable": "StartPosX",
+										"value": "Cards.X"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Cards",
+									"sid": 806665887169265,
+									"parameters": {
+										"instance-variable": "StartPosY",
+										"value": "Cards.Y"
+									}
+								}
+							],
+							"sid": 463481405909239,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "On the start of the layout, set each card's startPos variables to their x & y positions"
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Undocking",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "This is the code blocks where we undock the cards from your hand"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Cards",
+											"sid": 144479230405013,
+											"parameters": {
+												"object": "CardDock"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-dragging",
+											"objectClass": "Cards",
+											"sid": 744006376225910,
+											"behaviorType": "DragDrop",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Cards",
+											"sid": 259699986301678,
+											"parameters": {
+												"x": "Cards.StartPosX",
+												"y": "Cards.StartPosY"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Cards",
+											"sid": 872519626003778,
+											"parameters": {
+												"instance-variable": "Docked",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 205718175530602,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "when the card is not overlapping a dock and you are not dragging the card, set the card's position to the OG position, and set the docked variable to false"
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-drop",
+											"objectClass": "Cards",
+											"sid": 276123259672706,
+											"behaviorType": "DragDrop"
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Cards",
+											"sid": 848887342467195,
+											"parameters": {
+												"object": "CardDock"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Cards",
+											"sid": 997996832395409,
+											"parameters": {
+												"instance-variable": "Docked",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 804582331845895,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "when you drop a card, and it's not overlapping a dock, set the card's docked variable to false"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "CardDock",
+													"sid": 533373674678806,
+													"parameters": {
+														"instance-variable": "CardSlot",
+														"comparison": 0,
+														"value": "Cards.CardPosition"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "CardDock",
+													"sid": 617008890629932,
+													"parameters": {
+														"instance-variable": "Dockable",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 698948088688173,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "set card dock's to dockable, allowing another card to be placed"
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Cards",
+													"sid": 922615166630523,
+													"parameters": {
+														"instance-variable": "CardPosition",
+														"comparison": 0,
+														"value": "CardDock.CardSlot"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 981365616067295,
+													"parameters": {
+														"variable": "CardsDocked",
+														"value": "Cards.CardPosition"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 231542961835004,
+													"parameters": {
+														"variable": "Health",
+														"value": "Cards.HealthBoost"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 631131583255647,
+													"parameters": {
+														"variable": "Attack",
+														"value": "Cards.AttackBoost"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 451850216546336,
+													"parameters": {
+														"variable": "Resource",
+														"value": "Cards.ResourceBoost"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 259441484991065,
+													"parameters": {
+														"variable": "Speed",
+														"value": "Cards.SpeedBoost"
+													}
+												}
+											],
+											"sid": 948556551103725,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "subtract all of the cards stat boosts, and it's numbers from the global variables"
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "Cards",
+															"sid": 657182746127969,
+															"parameters": {
+																"instance-variable": "CardPosition",
+																"value": "0"
+															}
+														}
+													],
+													"sid": 390739743360339,
+													"children": [
+														{
+															"eventType": "comment",
+															"text": "Set the card position to 0"
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Cards",
+													"sid": 480301386219157,
+													"parameters": {
+														"instance-variable": "CardPosition",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "Cards",
+													"sid": 485941107701850,
+													"parameters": {
+														"x": "Cards.StartPosX",
+														"y": "Cards.StartPosY"
+													}
+												}
+											],
+											"sid": 649857289836944,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "when the card's cardposition is equal to zero, reset it's position to the starting position"
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Cards",
+											"sid": 109056976624430,
+											"parameters": {
+												"instance-variable": "Docked"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 133567513499129,
+											"parameters": {
+												"variable": "CardsDocked",
+												"value": "Cards.CardPosition"
+											}
+										}
+									],
+									"sid": 816371439241358,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "when the card is not docked, subtract it from the total cards docked, and set it's position to zero"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Cards",
+													"sid": 741611537549991,
+													"parameters": {
+														"instance-variable": "CardPosition",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 508148103257026
+										}
+									]
+								}
+							],
+							"sid": 936760207931969
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Docking",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "This is the code blocks where we dock the cards to your hand."
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-drop",
+											"objectClass": "Cards",
+											"sid": 451707166716025,
+											"behaviorType": "DragDrop"
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Cards",
+											"sid": 405067446139675,
+											"parameters": {
+												"object": "CardDock"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "CardDock",
+											"sid": 574845345595378,
+											"parameters": {
+												"instance-variable": "Dockable"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Cards",
+											"sid": 686844567653352,
+											"parameters": {
+												"instance-variable": "CardPosition",
+												"value": "CardDock.CardSlot"
+											}
+										}
+									],
+									"sid": 717593601693323,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Cards",
+													"sid": 981434089600916,
+													"parameters": {
+														"instance-variable": "CardPosition",
+														"comparison": 0,
+														"value": "CardDock.CardSlot"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position-to-another-object",
+													"objectClass": "Cards",
+													"sid": 290268727548756,
+													"parameters": {
+														"object": "CardDock",
+														"image-point-optional": "0"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Cards",
+													"sid": 331174758488777,
+													"parameters": {
+														"instance-variable": "Docked",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 560125733381773,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "CardDock",
+															"sid": 400696994626476,
+															"parameters": {
+																"instance-variable": "CardSlot",
+																"comparison": 0,
+																"value": "Cards.CardPosition"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "CardDock",
+															"sid": 111350134562819,
+															"parameters": {
+																"instance-variable": "Dockable",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 988923100008635,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "add-to-eventvar",
+																	"objectClass": "System",
+																	"sid": 474626089254801,
+																	"parameters": {
+																		"variable": "CardsDocked",
+																		"value": "Cards.CardPosition"
+																	}
+																},
+																{
+																	"id": "add-to-eventvar",
+																	"objectClass": "System",
+																	"sid": 527104318697811,
+																	"parameters": {
+																		"variable": "Health",
+																		"value": "Cards.HealthBoost"
+																	}
+																},
+																{
+																	"id": "add-to-eventvar",
+																	"objectClass": "System",
+																	"sid": 703165952566938,
+																	"parameters": {
+																		"variable": "Attack",
+																		"value": "Cards.AttackBoost"
+																	}
+																},
+																{
+																	"id": "add-to-eventvar",
+																	"objectClass": "System",
+																	"sid": 525846196070601,
+																	"parameters": {
+																		"variable": "Resource",
+																		"value": "Cards.ResourceBoost"
+																	}
+																},
+																{
+																	"id": "add-to-eventvar",
+																	"objectClass": "System",
+																	"sid": 977240994147469,
+																	"parameters": {
+																		"variable": "Speed",
+																		"value": "Cards.SpeedBoost"
+																	}
+																}
+															],
+															"sid": 872836228427732
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							],
+							"sid": 104515694353425
+						}
+					],
+					"sid": 307524614135925
+				}
+			],
+			"sid": 564251290912818
+		}
+	],
+	"sid": 998456630797308
+}

@@ -1,0 +1,564 @@
+{
+	"name": "Layout 1",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Barriers",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 10,
+						"tile-height": 10,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 2,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"ownData": {
+						"tilemapData": {
+							"width": 50,
+							"height": 50,
+							"max-width": 246,
+							"max-height": 109,
+							"data": "50x8,59x0,50x8,59x0,50x8,59x0,15x8,20x0,13x80,2x8,59x0,14x8,22x0,12x80,2x8,59x0,13x8,24x0,11x80,2x8,59x0,12x8,26x0,10x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,11x8,28x0,9x80,2x8,59x0,14x8,22x0,12x80,2x8,59x0,8x8,5x0,8,22x0,12x80,2x8,59x0,8x8,5x0,8,22x0,12x80,2x8,59x0,8x8,28x0,12x80,2x8,59x0,8x8,28x0,12x80,2x8,59x0,8x8,28x0,12x80,2x8,59x0,8x8,28x0,12x80,2x8,59x0,8x8,28x0,12x80,2x8,59x0,8x8,5x0,8,22x0,12x80,2x8,59x0,8x8,5x0,8,22x0,12x80,2x8,59x0,14x8,9x0,5,12x0,12x80,2x8,59x0,8x8,3x80,28x0,9x80,2x8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,10x80,8,59x0,8x8,3x80,28x0,9x80,2x8,59x0,8x8,4x80,26x0,10x80,2x8,59x0,8x8,5x80,24x0,11x80,2x8,59x0,8x8,6x80,22x0,12x80,2x8,59x0,8x8,7x80,20x0,13x80,2x8,59x0,7x8,41x80,2x8,59x0,7x8,41x80,2x8,59x0,39x8,80,10x8,59x0,30x5,79x0,30x5,79x0,30x5,79x0,30x5,21007x0"
+						},
+						"tile-width": 10,
+						"tile-height": 10,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 500,
+						"height": 500,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "NextSceneZone",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 18,
+					"instanceVariables": {
+						"NextScene": "NorthLevel"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 246.02279173008887,
+						"y": 103.64607377694,
+						"width": 43.15589766645138,
+						"height": 74.48000453422216,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Player",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 19,
+					"instanceVariables": {
+						"Health": 10,
+						"Speed": 0,
+						"Attack": 0,
+						"Resource": 0
+					},
+					"behaviors": {
+						"8Direction": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 500,
+								"directions": "dir-8",
+								"set-angle": "interval-45",
+								"default-controls": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 250.00001518194563,
+						"y": 306.5515311004449,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 117060382254877,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "SelectionLayer",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "CardDock",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 3,
+					"instanceVariables": {
+						"Dockable": true,
+						"CardSlot": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 249.999975,
+						"y": 183.987419,
+						"width": 32,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CardDock",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 5,
+					"instanceVariables": {
+						"Dockable": true,
+						"CardSlot": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 299.99997505851513,
+						"y": 183.987419,
+						"width": 32,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "CardDock",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 6,
+					"instanceVariables": {
+						"Dockable": true,
+						"CardSlot": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 199.999975,
+						"y": 183.987419,
+						"width": 32,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Cards",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "2",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 8,
+					"instanceVariables": {
+						"StartPosX": 0,
+						"StartPosY": 0,
+						"Docked": false,
+						"CardPosition": 0,
+						"SpeedBoost": 0,
+						"HealthBoost": 2,
+						"AttackBoost": 0,
+						"ResourceBoost": 0
+					},
+					"behaviors": {
+						"DragDrop": {
+							"properties": {
+								"axes": "both",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 209.999975,
+						"y": 243.987419,
+						"width": 32,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Cards",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "0",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 9,
+					"instanceVariables": {
+						"StartPosX": 0,
+						"StartPosY": 0,
+						"Docked": false,
+						"CardPosition": 0,
+						"SpeedBoost": 0,
+						"HealthBoost": 0,
+						"AttackBoost": 2,
+						"ResourceBoost": 0
+					},
+					"behaviors": {
+						"DragDrop": {
+							"properties": {
+								"axes": "both",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 250.00000486297085,
+						"y": 243.987419,
+						"width": 32,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Cards",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 10,
+					"instanceVariables": {
+						"StartPosX": 0,
+						"StartPosY": 0,
+						"Docked": false,
+						"CardPosition": 0,
+						"SpeedBoost": 10,
+						"HealthBoost": 0,
+						"AttackBoost": 0,
+						"ResourceBoost": 0
+					},
+					"behaviors": {
+						"DragDrop": {
+							"properties": {
+								"axes": "both",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 169.999975,
+						"y": 243.987419,
+						"width": 32,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Cards",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "3",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 11,
+					"instanceVariables": {
+						"StartPosX": 0,
+						"StartPosY": 0,
+						"Docked": false,
+						"CardPosition": 0,
+						"SpeedBoost": 0,
+						"HealthBoost": 0,
+						"AttackBoost": 0,
+						"ResourceBoost": 5
+					},
+					"behaviors": {
+						"DragDrop": {
+							"properties": {
+								"axes": "both",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 289.999975,
+						"y": 243.987419,
+						"width": 32,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Cards",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "2",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 12,
+					"instanceVariables": {
+						"StartPosX": 0,
+						"StartPosY": 0,
+						"Docked": false,
+						"CardPosition": 0,
+						"SpeedBoost": 0,
+						"HealthBoost": 2,
+						"AttackBoost": 0,
+						"ResourceBoost": 0
+					},
+					"behaviors": {
+						"DragDrop": {
+							"properties": {
+								"axes": "both",
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 329.999975,
+						"y": 243.987419,
+						"width": 32,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"type": "button",
+						"text": "Start",
+						"tooltip": "Start Level",
+						"initially-visible": false,
+						"enabled": false,
+						"auto-font-size": true,
+						"checked": false,
+						"id": ""
+					},
+					"uid": 20,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 397.8744082138518,
+						"y": 326.0248617889844,
+						"width": 51.43808627394924,
+						"height": 14.812761952190101,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 171481564097096,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 765065678683461,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 500,
+	"height": 500,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "Lobby_ES"
+}

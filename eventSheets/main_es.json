@@ -1,0 +1,117 @@
+{
+	"name": "Main_ES",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Resource",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 384323394496563
+		},
+		{
+			"eventType": "variable",
+			"name": "Attack",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 562401244871780
+		},
+		{
+			"eventType": "variable",
+			"name": "Speed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 116394677121146
+		},
+		{
+			"eventType": "variable",
+			"name": "Health",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 778217848935643
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Controls_ES"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 731902155339319
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player",
+					"sid": 812043347126213,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "Player.8Direction.MaxSpeed+(Speed*2)"
+					}
+				}
+			],
+			"sid": 230108903400189
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 869368606176145
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Attack",
+					"sid": 439862760824642,
+					"parameters": {
+						"text": "\"Attack: \" & Attack"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Health",
+					"sid": 147340882555786,
+					"parameters": {
+						"text": "\"Health: \" & Health"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Mana",
+					"sid": 630182131612396,
+					"parameters": {
+						"text": "\"Mana: \" & Resource\n"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Speed",
+					"sid": 838380502205380,
+					"parameters": {
+						"text": "\"Speed: \" & Speed"
+					}
+				}
+			],
+			"sid": 562430473572992
+		}
+	],
+	"sid": 118591080945828
+}

@@ -1,0 +1,50 @@
+{
+	"name": "CardDock",
+	"plugin-id": "Sprite",
+	"sid": 261967848616016,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Dockable",
+			"type": "boolean",
+			"desc": "",
+			"sid": 355830791037922
+		},
+		{
+			"name": "CardSlot",
+			"type": "number",
+			"desc": "",
+			"sid": 582854452624463
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3799225,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 152014514912271,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
